@@ -21,9 +21,14 @@ Route::middleware('api')->prefix('v1')->group(function () {
         // Users routes
         Route::post('users:search', [UserController::class, 'search']);
         Route::get('users/{username}', [UserController::class, 'showByUsername']);
+        Route::post('users/follow', [UserController::class, 'follow']);
+        Route::post('users/unfollow', [UserController::class, 'unfollow']);
+        Route::get('users/me/followers', [UserController::class, 'followers']);
+        Route::get('users/me/followings', [UserController::class, 'following']);
 
         // Tweets Routes
         Route::post('tweets:search', [TweetController::class, 'search']);
         Route::apiResource('tweets', TweetController::class);
+
     });
 });
