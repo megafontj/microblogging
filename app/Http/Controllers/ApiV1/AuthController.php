@@ -6,9 +6,9 @@ use App\Actions\Auth\RegisterUserAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
-use App\Http\Resources\EmptyResource;
 use App\Http\Resources\TokenResource;
 use App\Http\Resources\UserResource;
+use App\Support\Resources\EmptyResource;
 use Illuminate\Validation\UnauthorizedException;
 
 class AuthController extends Controller
