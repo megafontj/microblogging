@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ApiV1\AuthController;
+use App\Http\Controllers\ApiV1\ChatController;
+use App\Http\Controllers\ApiV1\MessageController;
 use App\Http\Controllers\ApiV1\TweetController;
 use App\Http\Controllers\ApiV1\UserController;
 use App\Http\Middleware\OnlyGuestAccessMiddlware;
@@ -30,5 +32,11 @@ Route::middleware('api')->prefix('v1')->group(function () {
         Route::post('tweets:search', [TweetController::class, 'search']);
         Route::apiResource('tweets', TweetController::class);
 
+        // Chats and Messages
+        Route::post('chats/init', [ChatController::class, 'initChat']);
+        Route::get('chats/{id}', [ChatController::class, 'show']);
+        Route::post('chats/messages:search', [MessageController::class, 'search']);
+        Route::post('chats/messages', [MessageController::class, 'create']);
+        Route::delete('chats/messages/{id}', [MessageController::class, 'delete']);
     });
 });
