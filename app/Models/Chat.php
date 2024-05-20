@@ -36,5 +36,5 @@ class Chat extends Model
     public function messages(): HasMany
     {
         return $this->hasMany(Message::class);
-    }
+    }   
 }
