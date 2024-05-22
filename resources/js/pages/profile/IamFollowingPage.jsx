@@ -25,24 +25,29 @@ export const IamFollowingPage = () => {
     return (<div className='flex-[3_3_0] text-white border-r border-gray-700'>
         <h1 className='text-3xl my-3 mx-2'>Подписки</h1>
         {following?.map(item => (
-            <div key={item.id} className='flex flex-col gap-4 mx-4 mb-5 border-b border-gray-200'>
+            <div key={item.id} className='flex flex-col  mx-4 mb-5 border-b border-gray-200'>
                 <div
                     className='flex items-center justify-between gap-4'
                 >
                     <div className='flex gap-2 items-center'>
                         <div className='avatar'>
                             <div className='w-8 rounded-full'>
-                                <img src={"/avatar-placeholder.png"} />
+                                <img src={"/assets/avatar-placeholder.png"} />
                             </div>
                         </div>
                         <div className='flex flex-col'>
 										<span className='font-semibold tracking-tight truncate w-28'>
-											{item.name}
+											{item.full_name}
 										</span>
-                            <span className='text-sm text-slate-500'>@username</span>
+                            <span className='text-sm text-slate-500'>@{item.username}</span>
                         </div>
                     </div>
                     <div>
+                        <Link to={`/chats/${item.username}`}
+                            className='btn bg-primary text-white hover:opacity-80 hover:opacity-90 rounded-full btn-sm'
+                        >
+                            Написать
+                        </Link>
                         <button
                             onClick={() => unsubscribe(item.id)}
                             className='btn bg-white text-black hover:bg-white hover:opacity-90 rounded-full btn-sm'

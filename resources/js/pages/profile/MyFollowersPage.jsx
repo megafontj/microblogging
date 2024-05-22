@@ -27,17 +27,30 @@ export const MyFollowersPage = () => {
                     <div className='flex gap-2 items-center'>
                         <div className='avatar'>
                             <div className='w-8 rounded-full'>
-                                <img src={"/avatar-placeholder.png"} />
+                                <img src={"/assets/avatar-placeholder.png"} security={item.full_name} />
                             </div>
                         </div>
                         <div className='flex flex-col'>
 										<span className='font-semibold tracking-tight truncate w-28'>
-											{item.name}
+											{item.full_name}
 										</span>
-                            <span className='text-sm text-slate-500'>@username</span>
+                            <span className='text-sm text-slate-500'>@{item.username}</span>
                         </div>
                     </div>
                 </Link>
+                <div>
+                    <Link to={`/chats/${item.username}`}
+                          className='btn bg-primary text-white hover:opacity-80 hover:opacity-90 rounded-full btn-sm'
+                    >
+                        Написать
+                    </Link>
+                    <button
+                        // onClick={() => unsubscribe(item.id)}
+                        className='btn bg-white text-black hover:bg-white hover:opacity-90 rounded-full btn-sm'
+                    >
+                        Отписаться
+                    </button>
+                </div>
             </div>
         ))}
     </div>);

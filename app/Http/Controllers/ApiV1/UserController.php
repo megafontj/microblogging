@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ApiV1;
 
 use App\Actions\Followers\FollowUserAction;
+use App\Actions\Followers\LoadNotFollowedUsersAction;
 use App\Actions\Followers\UnfollowUserAction;
 use App\Http\Requests\FollowUnfollowRequest;
 use App\Http\Resources\UserResource;
@@ -48,4 +49,10 @@ class UserController
     {
         return UserResource::collection(auth()->user()->followings()->get());
     }
+
+    public function recommendationUsers(LoadNotFollowedUsersAction $action)
+    {
+        return UserResource::collection($action->execute());
+    }
+
 }

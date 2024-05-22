@@ -38,7 +38,7 @@ const ProfilePage = () => {
 					<br/>
 					<div className='flex gap-5'>
 						<Link to='/profile/followers' className='text-xs btn btn-sm bg-primary'>Подписчики {account?.followers_count}</Link>
-						<Link to='/profile/following' className='text-xs btn btn-sm bg-primary'>Подписан {account?.following_count}</Link>
+						<Link to='/profile/following' className='text-xs btn btn-sm bg-primary'>Подписан {account?.followings_count}</Link>
 					</div>
 				</div>
 				<div>

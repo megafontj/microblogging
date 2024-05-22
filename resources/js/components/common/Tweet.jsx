@@ -59,7 +59,7 @@ export const Tweet = ({item, getTweets, showOwner}) => {
                             </button>
                             <button
                                 onClick={ () => setEditMode(false) }
-                                className='btn rounded-full btn-cancel text-black'>
+                                className='btn rounded-full btn-cancel btn-white'>
                                 Отменить
                             </button>
                         </div>

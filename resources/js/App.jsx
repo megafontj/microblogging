@@ -11,6 +11,7 @@ import {Home} from "./pages/Home.jsx";
 import {MyFollowersPage} from "./pages/profile/MyFollowersPage.jsx";
 import {IamFollowingPage} from "./pages/profile/IamFollowingPage.jsx";
 import {NotificationPage} from "./pages/notification/NotificationPage.jsx";
+import {ChatPage} from "./pages/chats/ChatPage.jsx";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/profile/following' element={isAuthorized ?  <IamFollowingPage /> : <LoginPage />} />
                 <Route path='/profile/followers' element={isAuthorized ?  <MyFollowersPage /> : <LoginPage />} />
                 <Route path='/profile/notifications' element={isAuthorized ?  <NotificationPage /> : <LoginPage />} />
+                <Route path='/chats/:username' element={isAuthorized ?  <ChatPage /> : <LoginPage />} />
             </Routes>
             {isAuthorized && <RightSide />}
             <ToastContainer />

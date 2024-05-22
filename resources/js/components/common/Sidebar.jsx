@@ -9,17 +9,14 @@ import http from "../../api/http.js";
 import {API_ROUTES} from "../../api/api_routes.js";
 import {removeTokenFromStorage} from "../../utils/token.js";
 import {toast} from "react-toastify";
+import {getAccount} from "../../api/requests.js";
 
 
 const Sidebar = () => {
 	const {account, setAccountInfo, unAuthorize} = useAuth();
 
 	useEffect(() => {
-		const getAccount = async () => {
-			const response = await http.post(API_ROUTES.GET_ACCOUNT);
-			setAccountInfo(response.data.data);
-		}
-		getAccount();
+        getAccount(setAccountInfo)
 	}, []);
 
 	const handleLogout = async () => {

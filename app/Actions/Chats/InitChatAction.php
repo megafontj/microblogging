@@ -10,13 +10,25 @@ class InitChatAction
     public function execute(int $chatWithUserId)
     {
         $hasChat = Chat::hasChat($chatWithUserId);
+
         if ($hasChat) {
-            return Chat::getChat($chatWithUserId);
+            $chat = Chat::getChat($chatWithUserId);
+            return [
+                'id' => $chat->id,
+                'me' => $chat->user1_id == Auth::id() ? $chat->user1_id : $chat->user2_id,
+                'user_id' => $chatWithUserId
+            ];
         }
 
-        return Chat::create([
+        $chat = Chat::create([
             'user1_id' => Auth::user()->id,
             'user2_id' => $chatWithUserId
         ]);
+
+        return [
+            'id' => $chat->id,
+            'me' => $chat->user1_id == Auth::id() ? $chat->user1_id : $chat->user2_id,
+            'user_id' => $chatWithUserId
+        ];
     }
 }

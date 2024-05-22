@@ -63,4 +63,5 @@ class TweetController extends Controller
 
         return new EmptyResource();
     }
+
 }

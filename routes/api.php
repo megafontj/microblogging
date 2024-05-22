@@ -27,6 +27,7 @@ Route::middleware('api')->prefix('v1')->group(function () {
         Route::post('users/unfollow', [UserController::class, 'unfollow']);
         Route::get('users/me/followers', [UserController::class, 'followers']);
         Route::get('users/me/followings', [UserController::class, 'following']);
+        Route::get('users/me/recommendation', [UserController::class, 'recommendationUsers']);
 
         // Tweets Routes
         Route::post('tweets:search', [TweetController::class, 'search']);

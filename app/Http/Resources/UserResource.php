@@ -18,6 +18,8 @@ class UserResource extends JsonResource
             'full_name' => $this->full_name,
             'email' => $this->email,
             'username' => $this->username,
+            'followings_count' => $this->whenNotNull($this->followings_count),
+            'followers_count' => $this->whenNotNull($this->followers_count)
         ];
     }
 }

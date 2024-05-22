@@ -41,7 +41,7 @@ class AuthController extends Controller
 
     public function me(): UserResource
     {
-        return new UserResource(auth()->user());
+        return new UserResource(auth()->user()->loadCount(['followings', 'followers']));
     }
 
     protected function makeResponsibleToken($token): array
