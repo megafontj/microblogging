@@ -31,6 +31,7 @@ Route::middleware('api')->prefix('v1')->group(function () {
 
         // Tweets Routes
         Route::post('tweets:search', [TweetController::class, 'search']);
+        Route::get('tweets/followings', [TweetController::class, 'followings']);
         Route::apiResource('tweets', TweetController::class);
 
         // Chats and Messages

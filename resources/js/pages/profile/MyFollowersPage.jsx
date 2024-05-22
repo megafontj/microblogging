@@ -19,7 +19,7 @@ export const MyFollowersPage = () => {
     return (<div className='flex-[3_3_0] text-white border-r border-gray-700'>
         <h1 className='text-3xl my-3 mx-2'>Мои подписчики</h1>
         {followers?.map(item => (
-            <div key={item.id} className='flex flex-col gap-4'>
+            <div key={item.id} className='flex justify-between border-b border-white mb-5'>
                 <Link
                     to={`/profile`}
                     className='flex items-center justify-between gap-4'
@@ -44,12 +44,6 @@ export const MyFollowersPage = () => {
                     >
                         Написать
                     </Link>
-                    <button
-                        // onClick={() => unsubscribe(item.id)}
-                        className='btn bg-white text-black hover:bg-white hover:opacity-90 rounded-full btn-sm'
-                    >
-                        Отписаться
-                    </button>
                 </div>
             </div>
         ))}

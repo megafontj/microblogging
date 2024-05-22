@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ApiV1;
 
 use App\Actions\Tweets\CreateTweetAction;
 use App\Actions\Tweets\DeleteTweetAction;
+use App\Actions\Tweets\LoadFollowingsTweetAction;
 use App\Actions\Tweets\UpdateTweetAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tweet\CreateOrUpdateTweetRequest;
@@ -64,4 +65,8 @@ class TweetController extends Controller
         return new EmptyResource();
     }
 
+    public function followings(LoadFollowingsTweetAction $action): AnonymousResourceCollection
+    {
+        return TweetResource::collection($action->execute());
+    }
 }

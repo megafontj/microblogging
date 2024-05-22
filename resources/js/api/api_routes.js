@@ -5,7 +5,7 @@ export const API_ROUTES = {
     REFRESH: 'auth/refresh',
     GET_ACCOUNT: 'auth/me',
     TWEET_SEARCH: "tweets:search",
-    FOLLOWING_TWEETS: 'account/following/tweets',
+    FOLLOWING_TWEETS: 'tweets/followings',
     TWEETS: 'tweets',
     ACCOUNT_FOLLOWERS: "users/me/followers",
     ACCOUNT_FOLLOWING: "users/me/followings",

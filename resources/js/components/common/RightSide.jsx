@@ -35,19 +35,21 @@ export const RightSide = () => {
                         <div
                             className='flex items-center justify-between gap-4'
                         >
-                            <div className='flex gap-2 items-center'>
-                                <div className='avatar'>
-                                    <div className='w-8 rounded-full'>
-                                        <img src={"/assets/avatar-placeholder.png"} alt={item.full_name} />
+                            <Link to={`/profiles/${item.username}`}>
+                                <div className='flex gap-2 items-center'>
+                                    <div className='avatar'>
+                                        <div className='w-8 rounded-full'>
+                                            <img src={"/assets/avatar-placeholder.png"} alt={item.full_name} />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='flex flex-col'>
+                                    <div className='flex flex-col'>
 										<span className='font-semibold tracking-tight truncate w-28'>
 											{item.full_name}
 										</span>
-                                    <span className='text-sm text-slate-500'>@{item.username}</span>
+                                        <span className='text-sm text-slate-500'>@{item.username}</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                             <div>
                                 <button
                                     onClick={() => subscribeToUser(item.id)}

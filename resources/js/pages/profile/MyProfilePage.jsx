@@ -9,7 +9,7 @@ import http from "../../api/http.js";
 import {API_ROUTES} from "../../api/api_routes.js";
 import {Tweet} from "../../components/common/Tweet.jsx";
 
-const ProfilePage = () => {
+const MyProfilePage = () => {
 	const {account} = useAuth();
 	const [tweets, setTweets] = useState([]);
 
@@ -56,4 +56,4 @@ const ProfilePage = () => {
 	);
 };
 
-export default ProfilePage;
+export default MyProfilePage;

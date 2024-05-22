@@ -18,7 +18,7 @@ class UserController
 {
     public function search(SearchRequest $request, SearchQuery $query)
     {
-        return UserResource::collection(User::filter($query)->cursorPaginate(25));
+        return UserResource::collection(User::filter($query)->withCount(['followings', 'followers'])->cursorPaginate(25));
     }
 
     public function showByUsername(string $username, Request $request): UserResource

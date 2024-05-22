@@ -19,7 +19,8 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'username' => $this->username,
             'followings_count' => $this->whenNotNull($this->followings_count),
-            'followers_count' => $this->whenNotNull($this->followers_count)
+            'followers_count' => $this->whenNotNull($this->followers_count),
+            'tweets' => $this->whenLoaded('tweets'),
         ];
     }
 }
